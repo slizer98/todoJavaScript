@@ -5,3 +5,6 @@ function miFuncion(a, b){
 
 // Llamando la funcion
 miFuncion(2, 3);
+
+var miFuncionTexto = miFuncion.toString();
+console.log(miFuncionTexto);
