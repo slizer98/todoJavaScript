@@ -43,9 +43,12 @@ class Persona {
 // Clase hija Empleado
 class Empleado extends Persona {
 
+    static contadorEmpleados = 0;
+    
     // herencia de la clase persona
     constructor(nombre, apellido, edad, salario) {
         super(nombre, apellido, edad);
+        this._idEmpleado = ++ Empleado.contadorEmpleados;
         this._salario = salario;
     }
     // Metodos get y set
@@ -59,7 +62,7 @@ class Empleado extends Persona {
         this._salario = salario;
     }
     toString() {
-        return super.toString() + ` - $${this._salario}`;
+        return `${super.toString()} ${this._idEmpleado} - $${this._salario}`;
     }
 
 }
@@ -67,8 +70,11 @@ class Empleado extends Persona {
 // clase hija Cliente
 class Cliente extends Persona {
 
+    static contadorClientes = 0;
+    
     constructor(nombre, apellido, edad, fechaRegistro) {
         super(nombre, apellido, edad);
+        this._idCliente = ++Cliente.contadorClientes;
         this._fechaRegistro = fechaRegistro;
     }
     // Metodos get y set
@@ -82,7 +88,7 @@ class Cliente extends Persona {
         this._fechaRegistro = fechaRegistro;
     }
     toString() {
-        return super.toString() + ` - ${this._fechaRegistro}`;
+        return `${super.toString()} ${this._idCliente}  ${this._fechaRegistro}`;
     }
 }
 
